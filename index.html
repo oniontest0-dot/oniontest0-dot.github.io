@@ -58,23 +58,59 @@ img{display:block}
 }
 
 /* ---------- nav ---------- */
+/* ---------- nav : Apple-style liquid glass pill ---------- */
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
+  position:fixed;top:1rem;left:50%;transform:translateX(-50%);
+  width:min(1080px,calc(100% - 1.6rem));z-index:100;
   display:flex;align-items:center;justify-content:space-between;
-  padding:1.1rem clamp(1.2rem,4vw,3rem);
-  background:rgba(10,10,10,.7);backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);
+  padding:.6rem .65rem .6rem 1.35rem;
+  border-radius:999px;
+  background:rgba(10,10,10,.52);
+  backdrop-filter:blur(18px) saturate(170%);
+  -webkit-backdrop-filter:blur(18px) saturate(170%);
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 10px 34px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.10);
+  transition:background-color .4s,box-shadow .4s,border-color .4s;
+}
+nav.scrolled{
+  background:rgba(10,10,10,.68);
+  border-color:rgba(255,255,255,.12);
+  box-shadow:0 14px 44px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.12);
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  nav{background:rgba(10,10,10,.88)}
 }
 nav .logo{font-family:var(--font-display);font-size:1rem;letter-spacing:.25em;
   text-transform:uppercase;color:var(--ink);text-decoration:none}
 nav .logo em{color:var(--gold);font-style:normal}
 nav ul{display:flex;gap:2.2rem;list-style:none}
-nav ul a{color:var(--ink-dim);text-decoration:none;font-size:.82rem;
-  letter-spacing:.18em;text-transform:uppercase;transition:color .25s}
+nav ul a{
+  color:rgba(245,240,230,.75);text-decoration:none;font-size:.82rem;
+  letter-spacing:.18em;text-transform:uppercase;
+  transition:color .25s;position:relative;
+}
+nav ul a::after{ /* subtle gold underline sweep */
+  content:"";position:absolute;left:0;bottom:-5px;height:1px;width:100%;
+  background:var(--gold);transform:scaleX(0);transform-origin:right;
+  transition:transform .35s cubic-bezier(.3,.7,.2,1);
+}
 nav ul a:hover{color:var(--gold-bright)}
-nav .cta{border:1px solid var(--gold);padding:.55rem 1.4rem;color:var(--gold)!important;transition:all .25s}
-nav .cta:hover{background:var(--gold);color:#0a0a0a!important}
-@media(max-width:820px){nav ul{display:none}}
+nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
+nav .cta{border:1px solid var(--gold);padding:.55rem 1.4rem;color:var(--gold)!important;
+  transition:all .3s cubic-bezier(.3,.7,.2,1)}
+nav .cta:hover{background:var(--gold);color:#0a0a0a!important;transform:translateY(-1px)}
+@media(max-width:820px){
+  nav ul{display:none}
+  nav{backdrop-filter:blur(12px) saturate(150%);-webkit-backdrop-filter:blur(12px) saturate(150%)}
+}
+/* motion & performance guardrails */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .marquee__track{animation:none}
+  .reveal{opacity:1;transform:none;transition:none}
+  #thumb{display:none}
+  nav{transition:none}
+}
 
 /* =====================================================
    ① HERO REVEL — scroll-shrink cinematic hero
@@ -560,11 +596,13 @@ footer .f-links a:hover{color:var(--gold)}
 <div id="thumb"><img alt="project preview"><span class="story">IG story preview</span></div>
 
 <script>
-/* ---------------- scroll progress ---------------- */
+/* ---------------- scroll progress + nav state ---------------- */
 const progress = document.getElementById('progress');
+const navBar   = document.querySelector('nav');
 addEventListener('scroll', ()=>{ requestAnimationFrame(()=>{
   const max = document.documentElement.scrollHeight - innerHeight;
   progress.style.width = (scrollY / max * 100)+'%';
+  navBar.classList.toggle('scrolled', scrollY > 48);
 });}, {passive:true});
 
 /* ---------------- ① hero reveal (scroll-shrink) ---------------- */
@@ -627,14 +665,21 @@ function bgColorFor(accent){ // page background dips into the brand's dark tint
 const thumb = document.getElementById('thumb');
 const thumbImg = thumb.querySelector('img');
 let tx = innerWidth/2, ty = innerHeight/2, cx = tx, cy = ty;
-addEventListener('mousemove', e=>{ tx = e.clientX; ty = e.clientY; },{passive:true});
-(function thumbLoop(){
+let thumbRAF = false;
+function thumbLoop(){
   cx += (tx - cx) * .12;   // lerp = silky follow
   cy += (ty - cy) * .12;
   thumb.style.left = cx+'px';
   thumb.style.top  = cy+'px';
-  requestAnimationFrame(thumbLoop);
-})();
+  const settled = Math.abs(tx-cx) < .5 && Math.abs(ty-cy) < .5;
+  if(thumb.classList.contains('on') || !settled){
+    requestAnimationFrame(thumbLoop);
+  } else { thumbRAF = false; }  // idle => stop burning frames on mobile
+}
+addEventListener('mousemove', e=>{
+  tx = e.clientX; ty = e.clientY;
+  if(!thumbRAF){ thumbRAF = true; requestAnimationFrame(thumbLoop); }
+},{passive:true});
 heroOnScroll();
 </script>
 </body>
