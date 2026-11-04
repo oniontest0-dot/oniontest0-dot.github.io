@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOIR GOLD — 視覺創意 × 社群行銷 作品集</title>
+<meta name="description" content="個人作品集：視覺創意、社群行銷、品牌美學。暗黑潮流 × 黑金美學。">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   NOIR GOLD — 黑金暗黑潮流 作品集
+   Palette: #0a0a0a 黑 / #d4af37 金 / #f5f0e6 米白
+   ============================================ */
+:root{
+  --bg:          #0a0a0a;
+  --bg-soft:     #111111;
+  --card:        #141414;
+  --line:        rgba(212,175,55,.25);
+  --line-strong: rgba(212,175,55,.55);
+  --gold:        #d4af37;
+  --gold-bright: #f5c542;
+  --gold-dim:    #8a7220;
+  --ink:         #f5f0e6;
+  --ink-dim:     rgba(245,240,230,.62);
+  --ink-faint:   rgba(245,240,230,.38);
+  --font-display:"Archivo Black","Noto Sans TC",sans-serif;
+  --font-body:   "Space Grotesk","Noto Sans TC",sans-serif;
+  --font-serif:  "Noto Serif TC",serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  overflow-x:hidden;
+  line-height:1.7;
+}
+::selection{background:var(--gold);color:#0a0a0a}
+
+/* ---- 噪點紋理 ---- */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---- 自訂游標 ---- */
+@media (pointer:fine){
+  body{cursor:crosshair}
+  a,button{cursor:pointer}
+}
+
+/* ---- 跑馬燈 ---- */
+.marquee{
+  overflow:hidden;white-space:nowrap;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:linear-gradient(90deg,#0d0d0d,#161310,#0d0d0d);
+  padding:.55rem 0;
+}
+.marquee--top{border-top:none}
+.marquee__track{display:inline-flex;animation:marquee 22s linear infinite;will-change:transform}
+.marquee__item{
+  font-family:var(--font-display);
+  font-size:.78rem;letter-spacing:.35em;text-transform:uppercase;
+  color:var(--gold);padding:0 1.8rem;display:inline-flex;align-items:center;gap:1.8rem;
+}
+.marquee__item::after{content:"✦";color:var(--gold-dim);font-size:.7rem}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---- 導覽列 ---- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem clamp(1.2rem,4vw,3rem);
+  background:rgba(10,10,10,.72);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+nav .logo{
+  font-family:var(--font-display);font-size:1rem;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--ink);text-decoration:none;
+}
+nav .logo em{color:var(--gold);font-style:normal}
+nav ul{display:flex;gap:2.2rem;list-style:none}
+nav ul a{
+  color:var(--ink-dim);text-decoration:none;font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;
+  transition:color .25s;
+}
+nav ul a:hover{color:var(--gold-bright)}
+nav .cta{
+  border:1px solid var(--gold);padding:.55rem 1.4rem;
+  color:var(--gold)!important;transition:all .25s;
+}
+nav .cta:hover{background:var(--gold);color:#0a0a0a!important}
+@media(max-width:820px){nav ul{display:none}}
+
+/* ---- Hero ---- */
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+  padding:9rem clamp(1.2rem,4vw,3rem) 5rem;position:relative;
+}
+.hero__glow{
+  position:absolute;top:-20%;right:-10%;width:60vw;height:60vw;border-radius:50%;
+  background:radial-gradient(circle,rgba(212,175,55,.14) 0%,transparent 65%);
+  pointer-events:none;filter:blur(10px);
+}
+.hero__tag{
+  display:inline-flex;align-items:center;gap:.7rem;
+  border:1px solid var(--line-strong);border-radius:999px;
+  padding:.4rem 1.2rem;margin-bottom:2.2rem;
+  font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);
+  width:fit-content;
+}
+.hero__tag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold-bright);
+  box-shadow:0 0 12px var(--gold-bright);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.hero h1{
+  font-family:var(--font-display),var(--font-serif);
+  font-size:clamp(2.8rem,9vw,7.5rem);
+  line-height:1.02;letter-spacing:.01em;text-transform:uppercase;
+}
+.hero h1 .gold-outline{
+  color:transparent;-webkit-text-stroke:1.5px var(--gold);
+  display:block;
+}
+.hero h1 .gold-fill{
+  background:linear-gradient(100deg,var(--gold-dim),var(--gold-bright) 45%,var(--gold-dim) 70%,var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  display:block;
+}
+.hero__sub{
+  margin-top:2rem;max-width:560px;color:var(--ink-dim);font-weight:300;
+  font-size:clamp(.95rem,1.5vw,1.1rem);
+}
+.hero__sub strong{color:var(--gold);font-weight:500}
+.hero__actions{margin-top:3rem;display:flex;gap:1.2rem;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:.8rem;
+  padding:1rem 2.2rem;font-size:.85rem;letter-spacing:.25em;text-transform:uppercase;
+  text-decoration:none;font-weight:500;transition:all .3s;
+}
+.btn--gold{background:linear-gradient(120deg,var(--gold),var(--gold-bright));color:#0a0a0a;border:1px solid var(--gold)}
+.btn--gold:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(212,175,55,.35)}
+.btn--ghost{border:1px solid var(--line-strong);color:var(--gold)}
+.btn--ghost:hover{background:rgba(212,175,55,.1)}
+.hero__scroll{
+  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  font-size:.7rem;letter-spacing:.4em;color:var(--ink-faint);text-transform:uppercase;
+}
+.hero__scroll::after{content:"";display:block;width:1px;height:36px;background:var(--gold);
+  margin:.7rem auto 0;animation:drop 1.8s infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---- 通用 Section ---- */
+section{padding:clamp(4.5rem,9vw,7.5rem) clamp(1.2rem,4vw,3rem);position:relative}
+.section-head{margin-bottom:3.5rem}
+.section-head .kicker{
+  font-size:.75rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);
+  display:flex;align-items:center;gap:1rem;margin-bottom:1.1rem;
+}
+.section-head .kicker::after{content:"";height:1px;flex:1;max-width:120px;background:var(--line-strong)}
+.section-head h2{
+  font-family:var(--font-display),var(--font-serif);
+  font-size:clamp(1.9rem,4.5vw,3.2rem);text-transform:uppercase;line-height:1.15;
+}
+.section-head h2 span{color:transparent;-webkit-text-stroke:1px var(--gold)}
+
+/* ---- 服務/強項 ---- */
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+.card{
+  background:var(--card);border:1px solid var(--line);
+  padding:2.2rem 1.8rem;position:relative;overflow:hidden;
+  transition:transform .35s,border-color .35s;
+}
+.card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  transform:scaleX(0);transition:transform .4s;
+}
+.card:hover{transform:translateY(-6px);border-color:var(--line-strong)}
+.card:hover::before{transform:scaleX(1)}
+.card .num{
+  font-family:var(--font-display);font-size:2.6rem;color:transparent;
+  -webkit-text-stroke:1px var(--gold-dim);margin-bottom:1.2rem;display:block;
+}
+.card h3{font-size:1.05rem;letter-spacing:.08em;margin-bottom:.8rem;font-weight:700}
+.card p{color:var(--ink-dim);font-size:.88rem;font-weight:300}
+.card .icon{font-size:1.6rem;color:var(--gold);margin-bottom:1rem}
+
+/* ---- 作品牆 ---- */
+.works{display:grid;grid-template-columns:repeat(12,1fr);gap:1.5rem}
+.work{
+  grid-column:span 4;position:relative;height:420px;overflow:hidden;
+  border:1px solid var(--line);background:var(--card);
+}
+.work--tall{grid-row:span 1}
+.work--wide{grid-column:span 8}
+.work--half{grid-column:span 6}
+.work img{
+  width:100%;height:100%;object-fit:cover;
+  filter:grayscale(.85) contrast(1.1) brightness(.75);
+  transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .8s;
+}
+.work:hover img{transform:scale(1.06);filter:grayscale(.15) contrast(1.05) brightness(.95)}
+.work__veil{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(10,10,10,.92) 100%);
+}
+.work__info{position:absolute;left:1.6rem;right:1.6rem;bottom:1.5rem}
+.work__cat{
+  font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem;
+}
+.work__title{
+  font-family:var(--font-display),var(--font-serif);
+  font-size:1.15rem;text-transform:uppercase;line-height:1.3;
+}
+.work__desc{font-size:.8rem;color:var(--ink-dim);margin-top:.4rem;max-height:0;opacity:0;transition:.45s}
+.work:hover .work__desc{max-height:80px;opacity:1}
+.work__line{position:absolute;inset:10px;border:1px solid var(--line);pointer-events:none;
+  opacity:0;transition:opacity .4s}
+.work:hover .work__line{opacity:1}
+@media(max-width:900px){
+  .work{grid-column:span 12!important;height:340px}
+}
+
+/* ---- 數據列 ---- */
+.stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  border:1px solid var(--line);
+}
+.stat{padding:2.4rem 1.6rem;text-align:center;border-left:1px solid var(--line)}
+.stat:first-child{border-left:none}
+.stat b{
+  font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;
+  background:linear-gradient(120deg,var(--gold),var(--gold-bright));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.stat span{display:block;margin-top:.5rem;font-size:.75rem;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--ink-faint)}
+@media(max-width:640px){.stat{border-left:none;border-top:1px solid var(--line)}}
+
+/* ---- 社群區塊 ---- */
+.socials{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem}
+.social-card{
+  border:1px solid var(--line);padding:2rem 1.8rem;text-decoration:none;color:var(--ink);
+  display:flex;flex-direction:column;gap:.8rem;background:var(--card);
+  transition:.35s position:relative;overflow:hidden;
+}
+.social-card:hover{border-color:var(--gold);transform:translateY(-5px)}
+.social-card .handle{font-size:1.05rem;font-weight:700;letter-spacing:.05em}
+.social-card .platform{font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold)}
+.social-card .meta{font-size:.8rem;color:var(--ink-dim);font-weight:300}
+.social-card .arrow{
+  margin-top:auto;align-self:flex-end;color:var(--gold);font-size:1.3rem;
+  transition:transform .3s;
+}
+.social-card:hover .arrow{transform:translateX(6px)}
+
+/* ---- 聯絡 ---- */
+.contact{max-width:820px;margin:0 auto}
+.contact form{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.contact .full{grid-column:1/-1}
+.contact label{
+  display:block;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--ink-faint);margin-bottom:.5rem;
+}
+.contact input,.contact textarea{
+  width:100%;background:var(--bg-soft);border:1px solid var(--line);
+  color:var(--ink);padding:.95rem 1.1rem;font-family:var(--font-body);font-size:.9rem;
+  transition:border-color .25s;resize:vertical;
+}
+.contact input:focus,.contact textarea:focus{outline:none;border-color:var(--gold)}
+.contact ::placeholder{color:var(--ink-faint)}
+@media(max-width:640px){.contact form{grid-template-columns:1fr}}
+.form-note{grid-column:1/-1;font-size:.75rem;color:var(--ink-faint);font-weight:300}
+
+/* ---- Footer ---- */
+footer{
+  border-top:1px solid var(--line);
+  padding:3rem clamp(1.2rem,4vw,3rem);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.4rem;
+}
+footer .f-logo{font-family:var(--font-display);letter-spacing:.25em;text-transform:uppercase}
+footer .f-logo em{color:var(--gold);font-style:normal}
+footer small{color:var(--ink-faint);font-size:.72rem;letter-spacing:.15em}
+footer .f-links{display:flex;gap:1.6rem}
+footer .f-links a{color:var(--ink-dim);text-decoration:none;font-size:.78rem;
+  letter-spacing:.2em;text-transform:uppercase;transition:.25s}
+footer .f-links a:hover{color:var(--gold)}
+
+/* ---- 進場動畫 ---- */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal.d1{transition-delay:.12s}.reveal.d2{transition-delay:.24s}.reveal.d3{transition-delay:.36s}
+</style>
+</head>
+<body>
+
+<!-- ▎頂部跑馬燈 -->
+<div class="marquee marquee--top">
+  <div class="marquee__track" id="mTop">
+    <span class="marquee__item">視覺創意</span><span class="marquee__item">社群行銷</span>
+    <span class="marquee__item">品牌美學</span><span class="marquee__item">視覺設計</span>
+    <span class="marquee__item">Social Media</span><span class="marquee__item">Creative Direction</span>
+    <span class="marquee__item">視覺創意</span><span class="marquee__item">社群行銷</span>
+    <span class="marquee__item">品牌美學</span><span class="marquee__item">視覺設計</span>
+    <span class="marquee__item">Social Media</span><span class="marquee__item">Creative Direction</span>
+  </div>
+</div>
+
+<!-- ▎導覽列 -->
+<nav>
+  <a class="logo" href="#">NOIR<em>GOLD</em>®</a>
+  <ul>
+    <li><a href="#works">作品</a></li>
+    <li><a href="#services">強項</a></li>
+    <li><a href="#social">社群</a></li>
+    <li><a href="#contact" class="cta"> collaborate ↗</a></li>
+  </ul>
+</nav>
+
+<!-- ▎Hero -->
+<header class="hero">
+  <div class="hero__glow"></div>
+  <span class="hero__tag reveal visible">Visual Creativity × Social Aesthetics</span>
+  <h1>
+    <span class="reveal visible d1">MAKE THEM</span>
+    <span class="gold-outline reveal visible d2">STOP</span>
+    <span class="gold-fill reveal visible d3">SCROLLING.</span>
+  </h1>
+  <p class="hero__sub reveal visible d3">
+    我是 <strong>你的名字</strong> — 專注於<strong>視覺創意</strong>與<strong>社群美感</strong>的行銷人。<br>
+    每一則貼文都是一次品牌展演，每一幀畫面都該值得被停下来看。
+  </p>
+  <div class="hero__actions reveal visible d3">
+    <a href="#works" class="btn btn--gold">View Works <span>↓</span></a>
+    <a href="#contact" class="btn btn--ghost">Let's Talk</a>
+  </div>
+  <div class="hero__scroll">Scroll</div>
+</header>
+
+<!-- ▎底部跑馬燈 -->
+<div class="marquee">
+  <div class="marquee__track">
+    <span class="marquee__item">Visual Creative</span><span class="marquee__item">Social Marketing</span>
+    <span class="marquee__item">Brand Aesthetics</span><span class="marquee__item">Content Design</span>
+    <span class="marquee__item">Creative Direction</span><span class="marquee__item">Trend Curation</span>
+    <span class="marquee__item">Visual Creative</span><span class="marquee__item">Social Marketing</span>
+    <span class="marquee__item">Brand Aesthetics</span><span class="marquee__item">Content Design</span>
+    <span class="marquee__item">Creative Direction</span><span class="marquee__item">Trend Curation</span>
+  </div>
+</div>
+
+<!-- ▎強項 -->
+<section id="services">
+  <div class="section-head reveal">
+    <div class="kicker">01 — Expertise</div>
+    <h2>我能為品牌做什麼<span>？</span></h2>
+  </div>
+  <div class="grid4">
+    <div class="card reveal">
+      <div class="icon">◈</div><span class="num">01</span>
+      <h3>視覺創意發想</h3>
+      <p>從概念到執行：主打視覺、campaign concept、素材橫幅設計，讓品牌在動態牆上第一眼就贏。</p>
+    </div>
+    <div class="card reveal d1">
+      <div class="icon">◈</div><span class="num">02</span>
+      <h3>社群美感經營</h3>
+      <p>IG / TikTok 版面規劃、色系調性管理、內容日曆，打造統一卻有記憶點的 feed。</p>
+    </div>
+    <div class="card reveal d2">
+      <div class="icon">◈</div><span class="num">03</span>
+      <h3>品牌調性定位</h3>
+      <p>找尋品牌的街頭語彙：slogan、語氣、視覺系統，把「想說的」變成「一秒看懂的」。</p>
+    </div>
+    <div class="card reveal d3">
+      <div class="icon">◈</div><span class="num">04</span>
+      <h3>趨勢內容操作</h3>
+      <p>抓住潮流週期，結合數據洞察產出爆點內容，讓互動不只是數字，而是品牌擴散。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ▎數據 -->
+<section style="padding-top:0">
+  <div class="stats reveal">
+    <div class="stat"><b>120+</b><span>Campaign Projects</span></div>
+    <div class="stat"><b>3.2M</b><span>總觸及人次</span></div>
+    <div class="stat"><b>28%</b><span>平均互動率提升</span></div>
+    <div class="stat"><b>5+</b><span>年社群操盤經驗</span></div>
+  </div>
+</section>
+
+<!-- ▎作品牆 -->
+<section id="works">
+  <div class="section-head reveal">
+    <div class="kicker">02 — Selected Works</div>
+    <h2>SELECTED <span>WORKS</span></h2>
+  </div>
+  <div class="works">
+    <!-- 圖片來自 Unsplash，可自行替換 -->
+    <a class="work reveal" href="#" style="grid-column:span 8">
+      <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80" alt="品牌 campaign 視覺">
+      <div class="work__veil"></div><div class="work__line"></div>
+      <div class="work__info">
+        <div class="work__cat">Campaign — visual identity</div>
+        <div class="work__title">暗黑時裝品牌重定位 Campaign</div>
+        <p class="work__desc">全案視覺主軸操刀：black &amp; gold 色彩系統 × 大字排版，上市首月 IG 互動成長 34%。</p>
+      </div>
+    </a>
+    <a class="work reveal d1" href="#">
+      <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&q=80" alt="社群版面企劃">
+      <div class="work__veil"></div><div class="work__line"></div>
+      <div class="work__info">
+        <div class="work__cat">Social — grid redesign</div>
+        <div class="work__title">10 萬追社群版面改造</div>
+        <p class="work__desc">以三分色系節奏重編 feed，追蹤者月增 9%。</p>
+      </div>
+    </a>
+    <a class="work reveal" href="#" style="grid-column:span 6">
+      <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1200&q=80" alt="街頭風格企劃">
+      <div class="work__veil"></div><div class="work__line"></div>
+      <div class="work__info">
+        <div class="work__cat">Editorial — street tone</div>
+        <div class="work__title">街头潮流電子報品牌設計</div>
+        <p class="work__desc">加入街頭攝影 × Monogram 元素，訂閱開率 48%。</p>
+      </div>
+    </a>
+    <a class="work reveal d1" href="#" style="grid-column:span 6">
+      <img src="https://images.unsplash.com/photo-1571167452816-894c89e3c923?w=1200&q=80" alt="短影音企劃">
+      <div class="work__veil"></div><div class="work__line"></div>
+      <div class="work__info">
+        <div class="work__cat">Reels — motion design</div>
+        <div class="work__title">爆點短影音系列操盤</div>
+        <p class="work__desc">30 條短影音累積 500 萬次觀看。</p>
+      </div>
+    </a>
+    <a class="work reveal" href="#" style="grid-column:span 12;height:360px">
+      <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1600&q=80" alt="聯名企劃">
+      <div class="work__veil"></div><div class="work__line"></div>
+      <div class="work__info">
+        <div class="work__cat">Collab — pop-up event</div>
+        <div class="work__title">限定聯名快閃 × 線上傳播整合</div>
+        <p class="work__desc">線上預告 → 快閃落地 → UGC 二次擴散，三天累積 8,000 人次打卡。</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ▎社群 -->
+<section id="social" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="section-head reveal">
+    <div class="kicker">03 — Social Presence</div>
+    <h2>FIND ME <span>ONLINE</span></h2>
+  </div>
+  <div class="socials">
+    <a class="social-card reveal" href="#" target="_blank" rel="noopener">
+      <span class="platform">Instagram</span>
+      <span class="handle">@yourname.creative</span>
+      <span class="meta">28.4K followers · 每日視覺靈感</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="social-card reveal d1" href="#" target="_blank" rel="noopener">
+      <span class="platform">TikTok</span>
+      <span class="handle">@yourname</span>
+      <span class="meta">112K likes · 趨勢拆解短片</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="social-card reveal d2" href="#" target="_blank" rel="noopener">
+      <span class="platform">Behance</span>
+      <span class="handle">/yourname</span>
+      <span class="meta">完整作品案例與過程紀錄</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="social-card reveal d3" href="#" target="_blank" rel="noopener">
+      <span class="platform">LinkedIn</span>
+      <span class="handle">Your Name</span>
+      <span class="meta">合作與工作邀約</span>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- ▎聯絡 -->
+<section id="contact">
+  <div class="contact">
+    <div class="section-head reveal" style="text-align:left">
+      <div class="kicker">04 — Contact</div>
+      <h2>LET'S MAKE <span>SOMETHING</span> LOUD.</h2>
+    </div>
+    <form class="reveal" onsubmit="event.preventDefault();alert('感謝！表單接好後端後即可使用 ✦');">
+      <div>
+        <label for="nm">Name</label>
+        <input id="nm" type="text" placeholder="你的名字" required>
+      </div>
+      <div>
+        <label for="em">Email</label>
+        <input id="em" type="email" placeholder="you@email.com" required>
+      </div>
+      <div class="full">
+        <label for="tp">Project Type</label>
+        <input id="tp" type="text" placeholder="品牌視覺 / 社群經營 / Campaign…">
+      </div>
+      <div class="full">
+        <label for="ms">Message</label>
+        <textarea id="ms" rows="5" placeholder="聊聊你的想法…"></textarea>
+      </div>
+      <div class="full">
+        <button class="btn btn--gold" type="submit">Send It <span>→</span></button>
+        <p class="form-note">※ 靜態網站無後端：可接 Formspree / Google Form，或直接放 email 連結。</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ▎Footer -->
+<footer>
+  <div class="f-logo">NOIR<em>GOLD</em>®</div>
+  <small>© 2026 Your Name · Visual Creativity, Social Aesthetics</small>
+  <div class="f-links">
+    <a href="#works">Works</a><a href="#social">Social</a><a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+// ---- 捲動進場動畫 ----
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.reveal:not(.visible)').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
