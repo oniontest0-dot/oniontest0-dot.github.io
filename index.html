@@ -6,6 +6,15 @@
 <title>NOIR GOLD — 視覺創意 × 社群行銷 作品集</title>
 <meta name="description" content="個人作品集：視覺創意、社群行銷、品牌美學。暗黑潮流 × 黑金美學。">
 
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZE383PYC0T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZE383PYC0T', { anonymize_ip: true });
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
@@ -573,7 +582,7 @@ footer .f-links a:hover{color:var(--gold)}
       <div class="kicker">04 — Contact</div>
       <h2>LET'S MAKE <span>SOMETHING</span> LOUD.</h2>
     </div>
-    <form class="reveal" onsubmit="event.preventDefault();alert('感謝！表單接好後端後即可使用 ✦');">
+    <form class="reveal" onsubmit="event.preventDefault(); if(window.gtag) gtag('event','contact_submit',{method:'form'}); alert('感謝！表單接好後端後即可使用 ✦');">
       <div><label for="nm">Name</label><input id="nm" type="text" placeholder="你的名字" required></div>
       <div><label for="em">Email</label><input id="em" type="email" placeholder="you@email.com" required></div>
       <div class="full"><label for="tp">Project Type</label><input id="tp" type="text" placeholder="品牌視覺 / 社群經營 / Campaign…"></div>
