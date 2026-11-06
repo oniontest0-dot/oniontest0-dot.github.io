@@ -9,6 +9,7 @@
 <meta name="author" content="汪華">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="https://oniontest0-dot.github.io/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -104,6 +105,7 @@ body::after{ /* noise */
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 ::selection{background:var(--gold);color:#0a0a0a}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media (pointer:fine){ body{cursor:crosshair} }
 img{display:block}
 
@@ -465,7 +467,9 @@ footer .f-links a:hover{color:var(--gold)}
 </div>
 
 <!-- manifesto -->
-<section>
+<main>
+<section id="manifesto" aria-labelledby="manifesto-title">
+  <h2 id="manifesto-title" class="sr-only">Manifesto — 創作宣言</h2>
   <p class="manifesto reveal">
     「社群時代的美學，<span class="accent">決定品牌被記住的方式</span>。」
     <span class="sub">— Manifesto / 創作宣言</span>
@@ -473,55 +477,55 @@ footer .f-links a:hover{color:var(--gold)}
 </section>
 
 <!-- ③ PROJECT INDEX : hover warp -->
-<section id="works" class="projects">
+<section id="works" class="projects" aria-labelledby="works-title">
   <div class="section-head reveal" style="padding:0 clamp(1.2rem,4vw,3rem)">
     <div class="kicker">01 — Selected Works</div>
-    <h2>HOVER TO <span>FEEL</span> THE BRAND</h2>
+    <h2 id="works-title">HOVER TO <span>FEEL</span> THE BRAND</h2>
   </div>
   <ul class="project-list">
     <li>
       <a class="project-row" href="#"
        data-accent="#e8b53a"
        data-thumb="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80">
-        <span class="idx">01</span><span class="name">Au Noir</span><span class="meta">Brand Film · Campaign — 2026</span>
+        <span class="idx">01</span><h3 class="name">Au Noir</h3><span class="meta">Brand Film · Campaign — 2026</span>
       </a>
     </li>
     <li>
       <a class="project-row" href="#"
        data-accent="#4da3ff"
        data-thumb="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80">
-        <span class="idx">02</span><span class="name">Feed Re:build</span><span class="meta">Social Grid · IG — 2026</span>
+        <span class="idx">02</span><h3 class="name">Feed Re:build</h3><span class="meta">Social Grid · IG — 2026</span>
       </a>
     </li>
     <li>
       <a class="project-row" href="#"
        data-accent="#ff5a5a"
        data-thumb="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80">
-        <span class="idx">03</span><span class="name">Stoop Club</span><span class="meta">Pop-up · Key Visual — 2025</span>
+        <span class="idx">03</span><h3 class="name">Stoop Club</h3><span class="meta">Pop-up · Key Visual — 2025</span>
       </a>
     </li>
     <li>
       <a class="project-row" href="#"
        data-accent="#40d97e"
        data-thumb="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80">
-        <span class="idx">04</span><span class="name">Reels ×30</span><span class="meta">Motion · Short Form — 2025</span>
+        <span class="idx">04</span><h3 class="name">Reels ×30</h3><span class="meta">Motion · Short Form — 2025</span>
       </a>
     </li>
     <li>
       <a class="project-row" href="#"
        data-accent="#c77dff"
        data-thumb="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80">
-        <span class="idx">05</span><span class="name">Trend Lab</span><span class="meta">Research · Newsletter — 2025</span>
+        <span class="idx">05</span><h3 class="name">Trend Lab</h3><span class="meta">Research · Newsletter — 2025</span>
       </a>
     </li>
   </ul>
 </section>
 
 <!-- ② ASYMMETRIC EDITORIAL GRID -->
-<section id="grid" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<section id="grid" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)" aria-labelledby="grid-title">
   <div class="section-head reveal">
     <div class="kicker">02 — Editorial Grid</div>
-    <h2>OFF-GRID <span>LAYOUTS</span>. ON-PURPOSE.</h2>
+    <h2 id="grid-title">OFF-GRID <span>LAYOUTS</span>. ON-PURPOSE.</h2>
   </div>
 
   <div class="egrid">
@@ -579,7 +583,8 @@ footer .f-links a:hover{color:var(--gold)}
 </section>
 
 <!-- stats -->
-<section style="padding-top:0">
+<section id="stats" style="padding-top:0" aria-labelledby="stats-title">
+  <h2 id="stats-title" class="sr-only">數據與成果</h2>
   <div class="stats reveal">
     <div class="stat"><b>120+</b><span>Campaign Projects</span></div>
     <div class="stat"><b>3.2M</b><span>總觸及人次</span></div>
@@ -589,33 +594,33 @@ footer .f-links a:hover{color:var(--gold)}
 </section>
 
 <!-- socials -->
-<section id="social" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<section id="social" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)" aria-labelledby="social-title">
   <div class="section-head reveal">
     <div class="kicker">03 — Social Presence</div>
-    <h2>FIND ME <span>ONLINE</span></h2>
+    <h2 id="social-title">FIND ME <span>ONLINE</span></h2>
   </div>
   <div class="socials">
     <a class="social-card reveal" href="#" target="_blank" rel="noopener">
       <span class="platform">Instagram</span>
-      <span class="handle">@yourname.creative</span>
+      <h3 class="handle">@yourname.creative</h3>
       <span class="meta">28.4K followers · 每日視覺靈感</span>
       <span class="arrow">→</span>
     </a>
     <a class="social-card reveal d1" href="#" target="_blank" rel="noopener">
       <span class="platform">TikTok</span>
-      <span class="handle">@yourname</span>
+      <h3 class="handle">@yourname</h3>
       <span class="meta">112K likes · 趨勢拆解短片</span>
       <span class="arrow">→</span>
     </a>
     <a class="social-card reveal d2" href="#" target="_blank" rel="noopener">
       <span class="platform">Behance</span>
-      <span class="handle">/yourname</span>
+      <h3 class="handle">/yourname</h3>
       <span class="meta">完整作品案例與過程紀錄</span>
       <span class="arrow">→</span>
     </a>
     <a class="social-card reveal d3" href="#" target="_blank" rel="noopener">
       <span class="platform">LinkedIn</span>
-      <span class="handle">Your Name</span>
+      <h3 class="handle">Your Name</h3>
       <span class="meta">合作與工作邀約</span>
       <span class="arrow">→</span>
     </a>
@@ -623,11 +628,11 @@ footer .f-links a:hover{color:var(--gold)}
 </section>
 
 <!-- contact -->
-<section id="contact">
+<section id="contact" aria-labelledby="contact-title">
   <div class="contact">
     <div class="section-head reveal">
       <div class="kicker">04 — Contact</div>
-      <h2>LET'S MAKE <span>SOMETHING</span> LOUD.</h2>
+      <h2 id="contact-title">LET'S MAKE <span>SOMETHING</span> LOUD.</h2>
     </div>
     <form class="reveal" onsubmit="event.preventDefault(); if(window.gtag) gtag('event','contact_submit',{method:'form'}); alert('感謝！表單接好後端後即可使用 ✦');">
       <div><label for="nm">Name</label><input id="nm" type="text" placeholder="你的名字" required></div>
@@ -641,6 +646,8 @@ footer .f-links a:hover{color:var(--gold)}
     </form>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="f-logo">NOIR<em>GOLD</em>®</div>
