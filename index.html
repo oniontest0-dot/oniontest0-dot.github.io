@@ -66,7 +66,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Geist+Mono:wght@400;700&family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
 
 <style>
 /* =====================================================
@@ -417,6 +417,62 @@ footer .f-links a:hover{color:var(--gold)}
 .reveal{opacity:0;transform:translateY(36px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.8,.2,1)}
 .reveal.visible{opacity:1;transform:none}
 .reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.22s}.reveal.d3{transition-delay:.34s}
+
+/* =====================================================
+   ASCII TERMINAL — ascii-sharks × NOIR GOLD
+   終端機美學：單字體 / 畫布 ASCII / 黑金磷光 / 零依賴
+   ===================================================== */
+.ascii-terminal{
+  position:relative;
+  width:100%;
+  height:55vh;
+  min-height:420px;
+  background:#050505;
+  overflow:hidden;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.ascii-terminal canvas#asciiCanvas{
+  position:absolute;inset:0;width:100%;height:100%;
+  display:block;opacity:.3;pointer-events:none;
+}
+.ascii-terminal .term-wrap{
+  position:relative;z-index:2;
+  max-width:900px;padding:0 1.2rem;
+  font-family:'Geist Mono','Courier New',ui-monospace,monospace;
+  color:var(--gold);
+  letter-spacing:.15em;
+}
+.term-prompt{
+  font-size:clamp(.85rem,1.6vw,1.1rem);
+  margin-bottom:1.4rem;
+  opacity:.85;
+}
+.term-prompt::after{
+  content:"_";display:inline-block;animation:blink 1s steps(1) infinite;
+  margin-left:4px;color:var(--gold-bright);
+}
+.term-line{
+  font-size:clamp(1.1rem,2.2vw,1.7rem);
+  line-height:1.6;
+  white-space:pre-wrap;
+  text-shadow:0 0 12px rgba(212,175,55,.5),0 0 30px rgba(212,175,55,.2);
+}
+.term-line .gold{color:var(--gold-bright);font-weight:700}
+.term-line .white{color:var(--ink);opacity:.92}
+.term-line .dim{color:var(--ink-dim);opacity:.75}
+@keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
+@media (prefers-reduced-motion: reduce){
+  .term-prompt::after{animation:none;opacity:1}
+  .ascii-terminal canvas{display:none}
+}
+@media(max-width:640px){
+  .ascii-terminal{height:45vh;min-height:300px}
+  .term-line{font-size:1rem;letter-spacing:.06em}
+}
 </style>
 </head>
 <body>
@@ -466,6 +522,19 @@ footer .f-links a:hover{color:var(--gold)}
     <span class="marquee__item">Creative Direction</span><span class="marquee__item">Trend Curation</span>
   </div>
 </div>
+
+<!-- ASCII TERMINAL — ascii-sharks × NOIR GOLD -->
+<section id="ascii-terminal" class="ascii-terminal reveal">
+  <canvas id="asciiCanvas" aria-hidden="true" width="1" height="1"></canvas>
+  <div class="term-wrap">
+    <div class="term-prompt">>_ loading NOIR GOLD...</div>
+    <div class="term-line" id="termText"></div>
+    <div class="term-line dim" style="margin-top:1.2rem;">
+      SYSTEM READY · BRAND: NOIR GOLD · OPERATOR: 汪華<br>
+      FIELD: 視覺創意 × 社群行銷 · MODE: 暗黑潮流 / 黑金美學
+    </div>
+  </div>
+</section>
 
 <!-- manifesto -->
 <main>
@@ -745,6 +814,55 @@ addEventListener('mousemove', e=>{
   if(!thumbRAF){ thumbRAF = true; requestAnimationFrame(thumbLoop); }
 },{passive:true});
 heroOnScroll();
+
+/* ---------- ASCII Terminal (ascii-sharks × NOIR GOLD) ---------- */
+(function(){
+  const canvas = document.getElementById('asciiCanvas');
+  const ctx = canvas && canvas.getContext('2d');
+  if(!canvas || !ctx) return;
+
+  let w,h,fontSize,cols,drops;
+  const chars = '01#@%&*+=-:. ';
+
+  function resize(){
+    const rect = canvas.parentElement.getBoundingClientRect();
+    w = canvas.width = rect.width;
+    h = canvas.height = rect.height;
+    fontSize = Math.max(10, Math.min(18, w / 38));
+    cols = Math.floor(w / fontSize);
+    drops = new Array(cols).fill(1);
+  }
+  resize();
+  addEventListener('resize', resize);
+
+  function draw(){
+    ctx.fillStyle = 'rgba(5,5,5,.22)';
+    ctx.fillRect(0,0,w,h);
+    ctx.fillStyle = 'rgba(212,175,55,.12)';
+    ctx.font = fontSize + 'px monospace';
+    for(let i=0;i<cols;i++){
+      const x = i*fontSize;
+      const y = drops[i]*fontSize;
+      ctx.fillText(chars[Math.floor(Math.random()*chars.length)], x, y);
+      if(y > h && Math.random() > .98) drops[i]=0;
+      drops[i]++;
+    }
+  }
+  setInterval(draw, 55);
+
+  const el = document.getElementById('termText');
+  if(!el) return;
+  const full = `BOOTING NOIR GOLD v2.0\n\n[ OK ] BRAND — 汪華 NOIR GOLD\n[ OK ] FIELD — 視覺創意 × 社群行銷\n[ OK ] AESTHETIC — 暗黑潮流 / 黑金暗黑潮流\n[ OK ] STATUS — ONLINE\n\nREADY FOR COMMAND:`;
+  let i=0;
+  function type(){
+    if(i < full.length){
+      el.textContent += full.charAt(i);
+      i++;
+      setTimeout(type, Math.random()*50 + 15);
+    }
+  }
+  setTimeout(type, 600);
+})();
 </script>
 </body>
 </html>
