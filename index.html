@@ -425,8 +425,8 @@ footer .f-links a:hover{color:var(--gold)}
 .ascii-terminal{
   position:relative;
   width:100%;
-  height:55vh;
-  min-height:420px;
+  height:36vh;
+  min-height:240px;
   background:#050505;
   overflow:hidden;
   border-top:1px solid var(--line);
@@ -434,6 +434,7 @@ footer .f-links a:hover{color:var(--gold)}
   display:flex;
   align-items:center;
   justify-content:center;
+  margin-bottom:2rem;
 }
 .ascii-terminal canvas#asciiCanvas{
   position:absolute;inset:0;width:100%;height:100%;
@@ -456,22 +457,22 @@ footer .f-links a:hover{color:var(--gold)}
   margin-left:4px;color:var(--gold-bright);
 }
 .term-line{
-  font-size:clamp(1.1rem,2.2vw,1.7rem);
-  line-height:1.6;
+  font-size:clamp(1rem,2vw,1.5rem);
+  line-height:1.5;
   white-space:pre-wrap;
-  text-shadow:0 0 12px rgba(212,175,55,.5),0 0 30px rgba(212,175,55,.2);
+  text-shadow:0 0 10px rgba(212,175,55,.45),0 0 24px rgba(212,175,55,.18);
 }
 .term-line .gold{color:var(--gold-bright);font-weight:700}
 .term-line .white{color:var(--ink);opacity:.92}
-.term-line .dim{color:var(--ink-dim);opacity:.75}
+.term-line .dim{color:var(--ink-dim);opacity:.7}
 @keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
 @media (prefers-reduced-motion: reduce){
   .term-prompt::after{animation:none;opacity:1}
   .ascii-terminal canvas{display:none}
 }
 @media(max-width:640px){
-  .ascii-terminal{height:45vh;min-height:300px}
-  .term-line{font-size:1rem;letter-spacing:.06em}
+  .ascii-terminal{height:30vh;min-height:200px}
+  .term-line{font-size:.95rem;letter-spacing:.05em}
 }
 </style>
 </head>
