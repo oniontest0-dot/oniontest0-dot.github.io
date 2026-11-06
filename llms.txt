@@ -1,0 +1,23 @@
+# NOIR GOLD — 汪華 視覺創意 × 社群行銷 作品集
+
+> 汪華（NOIR GOLD）是專注視覺創意與社群美感的行銷人。作品集涵蓋品牌美學、社群經營、Campaign 視覺、內容設計。黑金暗黑潮流風格。
+
+## 主要頁面
+
+- [首頁](https://oniontest0-dot.github.io/) — 作品集總覽與創作宣言
+- [Selected Works](https://oniontest0-dot.github.io/#works) — 作品索引（Hover 互動品牌展示）
+- [Editorial Grid](https://oniontest0-dot.github.io/#grid) — 不規則編輯版面作品
+- [Social Presence](https://oniontest0-dot.github.io/#social) — 社群帳號總覽
+- [Contact](https://oniontest0-dot.github.io/#contact) — 聯絡與合作
+
+## 技術與結構化資料
+
+- [sitemap.xml](https://oniontest0-dot.github.io/sitemap.xml)
+- [robots.txt](https://oniontest0-dot.github.io/robots.txt)
+- JSON-LD: Person、WebSite
+- Open Graph / Twitter Card
+
+## 網站所有者
+
+汪華 / NOIR GOLD  
+https://oniontest0-dot.github.io/
