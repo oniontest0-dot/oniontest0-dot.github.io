@@ -41,7 +41,7 @@
   "jobTitle": "視覺創意 × 社群行銷",
   "description": "專注視覺創意與社群美感的行銷人，擅長品牌美學、社群經營、Campaign 視覺與內容設計。",
   "knowsAbout": ["視覺創意", "社群行銷", "品牌美學", "內容設計", "Campaign 視覺", "社群經營"],
-  "sameAs": []
+  "sameAs": ["https://www.instagram.com/onio.ntest"]
 }
 </script>
 <script type="application/ld+json">
@@ -360,6 +360,36 @@ section{padding:clamp(4.5rem,9vw,8rem) clamp(1.2rem,4vw,3rem);position:relative}
   .igframe,.igframe--second,.wide,.wide-2,.stack,.essay{grid-column:1/-1!important;margin-top:0!important}
 }
 
+/* ---- case studies ---- */
+.case{margin-top:clamp(2.4rem,6vw,5rem)}
+.case:first-of-type{margin-top:0}
+.case-rule{margin:clamp(2.4rem,6vw,5rem) 0}
+.case-tag{font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold)}
+.case-note{font-size:.78rem;line-height:1.9;color:var(--ink-faint);font-weight:300;margin-top:1.2rem}
+a.tile{display:block;text-decoration:none;cursor:zoom-in}
+.tile.clear img{filter:none;display:block}
+.tile.clear:hover img{filter:none;transform:scale(1.02)}
+.tile.clear:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.tile.wide.clear{aspect-ratio:16/9}
+.tall{grid-column:span 3;aspect-ratio:2/3}
+.sq7{grid-column:span 7;aspect-ratio:1/1}
+.essay5{grid-column:span 5;padding-top:1rem}
+.vid7{grid-column:span 7;margin:0}
+.vid7 video{width:100%;display:block;aspect-ratio:16/9;background:#000;border:1px solid var(--line)}
+.cap-line{margin-top:.7rem;font-size:.72rem;letter-spacing:.2em;color:var(--ink-faint)}
+.dl{text-align:center;margin-top:clamp(2.4rem,6vw,4rem)}
+.dl .case-note{margin-top:1.2rem}
+@media(max-width:860px){
+  .tall,.sq7,.essay5,.vid7{grid-column:1/-1!important;margin-top:0!important}
+  .tall{aspect-ratio:auto}
+}
+#lightbox{position:fixed;inset:0;z-index:200;background:rgba(5,5,5,.94);display:flex;
+  align-items:center;justify-content:center;padding:3vw;cursor:zoom-out}
+#lightbox[hidden]{display:none}
+#lightbox img{max-width:100%;max-height:100%;object-fit:contain}
+#lightbox button{position:absolute;top:1rem;right:1.2rem;background:none;border:1px solid var(--line-strong);
+  color:var(--ink);font-size:1.3rem;width:2.6rem;height:2.6rem;cursor:pointer}
+
 /* ---- stats ---- */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
   border:1px solid var(--line)}
@@ -556,101 +586,149 @@ footer .f-links a:hover{color:var(--gold)}
   </div>
   <ul class="project-list">
     <li>
-      <a class="project-row" href="#"
+      <a class="project-row" href="#case-kanazawa"
        data-accent="#e8b53a"
-       data-thumb="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80">
-        <span class="idx">01</span><h3 class="name">Au Noir</h3><span class="meta">Brand Film · Campaign — 2026</span>
+       data-thumb="assets/works/thumb-kanazawa.jpg">
+        <span class="idx">01</span><h3 class="name">金澤慢活宜居計畫</h3><span class="meta">City Marketing · 概念企劃 — 2026</span>
       </a>
     </li>
     <li>
-      <a class="project-row" href="#"
+      <a class="project-row" href="#case-detail"
+       data-accent="#ff7eb6"
+       data-thumb="assets/works/thumb-ecom.jpg">
+        <span class="idx">02</span><h3 class="name">智慧手錶詳情頁</h3><span class="meta">E-commerce Visual · AI 輔助 — 2026</span>
+      </a>
+    </li>
+    <li>
+      <a class="project-row" href="#case-video"
        data-accent="#4da3ff"
-       data-thumb="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80">
-        <span class="idx">02</span><h3 class="name">Feed Re:build</h3><span class="meta">Social Grid · IG — 2026</span>
+       data-thumb="assets/works/thumb-video.jpg">
+        <span class="idx">03</span><h3 class="name">智慧手錶短影音</h3><span class="meta">Short Video · 字幕設計 — 2026</span>
       </a>
     </li>
     <li>
-      <a class="project-row" href="#"
-       data-accent="#ff5a5a"
-       data-thumb="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80">
-        <span class="idx">03</span><h3 class="name">Stoop Club</h3><span class="meta">Pop-up · Key Visual — 2025</span>
-      </a>
-    </li>
-    <li>
-      <a class="project-row" href="#"
+      <a class="project-row" href="assets/portfolio-2026.pdf" target="_blank" rel="noopener" data-ga="portfolio_pdf_open"
        data-accent="#40d97e"
-       data-thumb="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80">
-        <span class="idx">04</span><h3 class="name">Reels ×30</h3><span class="meta">Motion · Short Form — 2025</span>
-      </a>
-    </li>
-    <li>
-      <a class="project-row" href="#"
-       data-accent="#c77dff"
-       data-thumb="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80">
-        <span class="idx">05</span><h3 class="name">Trend Lab</h3><span class="meta">Research · Newsletter — 2025</span>
+       data-thumb="assets/works/thumb-kanazawa.jpg">
+        <span class="idx">04</span><h3 class="name">完整作品集 PDF</h3><span class="meta">Portfolio · 23 頁 — 2026</span>
       </a>
     </li>
   </ul>
 </section>
 
-<!-- ② ASYMMETRIC EDITORIAL GRID -->
+<!-- ② CASE STUDIES -->
 <section id="grid" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)" aria-labelledby="grid-title">
   <div class="section-head reveal">
-    <div class="kicker">02 — Editorial Grid</div>
-    <h2 id="grid-title">OFF-GRID <span>LAYOUTS</span>. ON-PURPOSE.</h2>
+    <div class="kicker">02 — Case Studies</div>
+    <h2 id="grid-title">FROM STRATEGY <span>TO SCREEN</span></h2>
   </div>
 
-  <div class="egrid">
-    <div class="stack reveal">
-      <h3 class="bigword">Feed<br><em>RE:BUILD</em></h3>
-      <p class="egnote">
-        一個 100K 級時裝帳號的動態牆重建計劃。<br><br>
-        我把 feed 視為<b>「逆時針畫廊」</b>：九宮格不是限制，是策展。
-        三套色系以 4-2-3 節奏輪替，限動負責氛圍，貼文負責記憶。<br><br>
-        <b>成果：</b>月追蹤成長 +9%，平均互動率 2.8% → 4.6%。
-      </p>
-      <div class="pull">
-        「版面配置本身就是品牌語言。錯落有致，才留得住視線。」
-        <i>— Creative Note / 設計筆記</i>
+  <!-- 01 城市行銷企劃 -->
+  <article id="case-kanazawa" class="case" aria-label="金澤慢活宜居計畫 2027">
+    <div class="egrid">
+      <div class="stack reveal">
+        <span class="case-tag">01 · 城市行銷企劃｜課程實作</span>
+        <h3 class="bigword">金澤<br><em>慢活宜居</em></h3>
+        <p class="egnote">
+          「金箔輝く・四季物語」高雄市 × 金澤市城市行銷專案的概念企劃。<br><br>
+          定位為<b>慢活宜居之城</b>：以金箔工藝質感貫穿主視覺，再用四季風景，把旅客從一日遊帶往停留 2–5 日的慢活輕旅。<br><br>
+          策略依 PESTEL → SWOT → STP → 4P → KPI 逐步推演，主要客群是高雄 25–55 歲、重視文化體驗的旅客。
+        </p>
+      </div>
+      <a class="tile wide clear reveal d1" href="assets/works/kanazawa-key.jpg" data-zoom data-alt="金澤慢活宜居計畫 2027 主視覺" aria-label="放大檢視：金澤慢活宜居計畫主視覺">
+        <img src="assets/works/kanazawa-key.jpg" alt="金澤慢活宜居計畫 2027 主視覺，金箔與四季風景" loading="lazy" decoding="async" width="1600" height="900">
+        <span class="cap">Key Visual · 主視覺</span>
+      </a>
+
+      <a class="tile tall clear reveal" href="assets/works/kanazawa-gift.jpg" data-zoom data-alt="金箔菓匠贈答組視覺" aria-label="放大檢視：周邊禮品視覺">
+        <img src="assets/works/kanazawa-gift.jpg" alt="金箔和菓子與加賀金箔茶的贈答組合視覺" loading="lazy" decoding="async" width="784" height="1168">
+        <span class="cap">周邊禮品</span>
+      </a>
+      <a class="tile tall clear reveal d1" href="assets/works/kanazawa-guide.jpg" data-zoom data-alt="金澤暮らしガイド與資料袋視覺" aria-label="放大檢視：宜居手冊視覺">
+        <img src="assets/works/kanazawa-guide.jpg" alt="金澤生活導覽手冊、區域地圖與資料袋視覺" loading="lazy" decoding="async" width="784" height="1168">
+        <span class="cap">宜居手冊</span>
+      </a>
+      <div class="essay reveal d2">
+        <p class="egnote">
+          <b>四季主軸</b><br>
+          春・綻放　夏・靜心　秋・成熟　冬・靜謐<br>
+          每一季設一個可以親身參與的活動：春櫻點燈與金箔工作坊、茶屋涼風導覽、紅葉導覽與職人公開工房、雪景溫泉與年節市集。<br><br>
+          <b>規劃目標（企劃設定，非實際成果）</b><br>
+          外國人住宿客 +19%　·　平均停留 1.8–2.2 泊　·　策展參與 ≥ 25 萬人次
+        </p>
+        <p class="case-note">※ 本案為課程中的概念企劃，視覺為 AI 輔助生成；圖中的主辦與通路單位屬企劃設定，並非實際委託。</p>
       </div>
     </div>
+  </article>
 
-    <div class="tile igframe reveal d1" style="aspect-ratio:4/5">
-      <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=900&q=80" alt="IG 視覺一" loading="lazy" decoding="async" width="900" height="1125">
-      <span class="cap">IG Rebuild · 色系一</span>
-    </div>
-    <div class="tile igframe--second reveal d2" style="aspect-ratio:4/5">
-      <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=700&q=80" alt="IG 視覺二" loading="lazy" decoding="async" width="700" height="875">
-      <span class="cap">IG Rebuild · 色系二</span>
-    </div>
+  <div class="hrule case-rule"></div>
 
-    <div class="hrule"></div>
+  <!-- 02 商品詳情頁 -->
+  <article id="case-detail" class="case" aria-label="智慧手錶商品詳情頁">
+    <div class="egrid">
+      <div class="stack reveal">
+        <span class="case-tag">02 · 電商素材｜商品詳情頁</span>
+        <h3 class="bigword">智慧手錶<br><em>詳情頁</em></h3>
+        <p class="egnote">
+          同一類商品，做兩種受眾的詳情頁。<br><br>
+          女性款以粉色系和「專屬於妳的智慧時尚」切入：首屏大字配產品大圖，接五項圖示功能、三個使用情境，最後用三色並列收尾。
+        </p>
+      </div>
+      <a class="tile sq7 clear reveal d1" href="assets/works/watch-pink.jpg" data-zoom data-alt="女性智慧手錶商品詳情頁" aria-label="放大檢視：女性款詳情頁">
+        <img src="assets/works/watch-pink.jpg" alt="女性智慧手錶商品詳情頁，粉色錶帶、功能圖示與三色並列" loading="lazy" decoding="async" width="1254" height="1254">
+        <span class="cap">女性款詳情頁</span>
+      </a>
 
-    <div class="tile wide reveal">
-      <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1400&q=80" alt="活動主視覺" loading="lazy" decoding="async" width="1400" height="875">
-      <span class="cap">Key Visual · Stoop Club</span>
+      <a class="tile sq7 clear reveal" href="assets/works/watch-blue.jpg" data-zoom data-alt="方形智慧手錶商品詳情頁" aria-label="放大檢視：方形運動款詳情頁">
+        <img src="assets/works/watch-blue.jpg" alt="方形智慧手錶商品詳情頁，深藍都會調性、六項功能與四款配色" loading="lazy" decoding="async" width="1254" height="1254">
+        <span class="cap">方形運動款詳情頁</span>
+      </a>
+      <div class="essay5 reveal d1">
+        <p class="egnote">
+          方形款改走深藍都會調性，標語是「方寸之間，掌握更多可能」。功能分兩欄、配色增加到四款，版面資訊比女性款更密。
+        </p>
+        <p class="case-note">※ 商品畫面為 AI 輔助生成的練習素材，圖中續航、防水等規格文字是版面示意，並非實際商品規格。</p>
+      </div>
     </div>
-    <div class="essay stack reveal d1" style="padding-top:0">
-      <h3 class="bigword">STOOP<br><em>CLUB</em></h3>
-      <p class="egnote">
-        街區限定快閃的主視覺體系：HOODIE 巨字 × 打光攝影 × 塗鴉式箭頭導流。<br><br>
-        <b>三天累積 8,000 人次打卡，UGC 二次擴散 214 則。</b>
-      </p>
-    </div>
+  </article>
 
-    <div class="tile wide-2 reveal">
-      <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1000&q=80" alt="短影音" loading="lazy" decoding="async" width="1000" height="1000">
-      <span class="cap">Reels · 30 爆點短影音</span>
+  <div class="hrule case-rule"></div>
+
+  <!-- 03 短影音 -->
+  <article id="case-video" class="case" aria-label="智慧手錶短影音">
+    <div class="egrid">
+      <div class="stack reveal">
+        <span class="case-tag">03 · 短影音｜字幕設計</span>
+        <h3 class="bigword">SMART<br><em>WATCH</em></h3>
+        <p class="egnote">
+          兩支約 10 秒的短影音，對應女性款詳情頁的賣點。<br><br>
+          標題字樣用「SMART WATCH」搭配「專屬於妳的智慧時尚」；白字黑框的大字幕在淺色背景上也看得清楚，不開聲音也能看懂重點。畫面選城市景色前的手腕特寫，粉色錶帶強調女性定位。
+        </p>
+      </div>
+      <figure class="vid7 reveal d1">
+        <video controls playsinline preload="none" poster="assets/works/watch-lifestyle-poster.jpg" data-ga="video_play_lifestyle" aria-label="智慧手錶短影音：生活情境">
+          <source src="assets/works/watch-lifestyle.mp4" type="video/mp4">
+        </video>
+        <figcaption class="cap-line">生活情境：手腕特寫與功能圖示</figcaption>
+      </figure>
+
+      <figure class="vid7 reveal">
+        <video controls playsinline preload="none" poster="assets/works/watch-features-poster.jpg" data-ga="video_play_features" aria-label="智慧手錶短影音：功能與配色">
+          <source src="assets/works/watch-features.mp4" type="video/mp4">
+        </video>
+        <figcaption class="cap-line">功能與配色：數據畫面與三色並列</figcaption>
+      </figure>
+      <div class="essay5 reveal d1">
+        <p class="egnote">
+          第二支把數據畫面放大，字幕直接寫出功能：心率、步數、卡路里，再接防水與續航。
+        </p>
+      </div>
     </div>
-    <div class="essay stack reveal d1" style="padding-top:0">
-      <p class="egnote bigword" style="font-size:clamp(1.4rem,3.5vw,2.6rem)">
-        500 萬次<br><em>WATCHED</em>
-      </p>
-      <p class="egnote">
-        30 條短影音的爆點公式：0.8 秒切入 → 視覺鉤 → 金色字幕高潮。
-        平均完看率 54%。
-      </p>
-    </div>
+  </article>
+
+  <div class="dl reveal">
+    <a class="btn btn--gold" href="assets/portfolio-2026.pdf" target="_blank" rel="noopener" data-ga="portfolio_pdf_open">下載完整作品集 PDF <span>↓</span></a>
+    <p class="case-note">共 23 頁，另含 C.H 高奢手錶 Facebook 企劃、Instagram 與 Threads 實際發布、個人品牌單頁官網與 AI 商品攝影。</p>
   </div>
 </section>
 
@@ -661,7 +739,7 @@ footer .f-links a:hover{color:var(--gold)}
     <h2 id="social-title">FIND ME <span>ONLINE</span></h2>
   </div>
   <div class="socials">
-    <a class="social-card reveal" href="https://www.instagram.com/onio.ntest" target="_blank" rel="noopener">
+    <a class="social-card reveal" href="https://www.instagram.com/onio.ntest" target="_blank" rel="noopener" data-ga="social_click_instagram">
       <span class="platform">Instagram</span>
       <h3 class="handle">@onio.ntest</h3>
       <span class="meta">每日視覺靈感</span>
@@ -677,14 +755,14 @@ footer .f-links a:hover{color:var(--gold)}
       <div class="kicker">04 — Contact</div>
       <h2 id="contact-title">LET'S MAKE <span>SOMETHING</span> LOUD.</h2>
     </div>
-    <form class="reveal" onsubmit="event.preventDefault(); if(window.gtag) gtag('event','contact_submit',{method:'form'}); alert('感謝！表單接好後端後即可使用 ✦');">
+    <form id="contactForm" class="reveal">
       <div><label for="nm">Name</label><input id="nm" type="text" placeholder="你的名字" required></div>
       <div><label for="em">Email</label><input id="em" type="email" placeholder="you@email.com" required></div>
       <div class="full"><label for="tp">Project Type</label><input id="tp" type="text" placeholder="品牌視覺 / 社群經營 / Campaign…"></div>
-      <div class="full"><label for="ms">Message</label><textarea id="ms" rows="5" placeholder="聊聊你的想法…"></textarea></div>
+      <div class="full"><label for="ms">Message</label><textarea id="ms" rows="5" maxlength="1200" placeholder="聊聊你的想法…"></textarea></div>
       <div class="full">
         <button class="btn btn--gold" type="submit">Send It <span>→</span></button>
-        <p class="form-note">※ 可接 Formspree / Google Form 使用。</p>
+        <p class="form-note">按下 Send It 會開啟你的電子郵件程式並帶入內容，確認後再按寄出即可。若沒有反應，請直接寄信到 <span id="mailFallback"></span>。</p>
       </div>
     </form>
   </div>
@@ -695,8 +773,13 @@ footer .f-links a:hover{color:var(--gold)}
 <footer>
   <div class="f-logo">NOIR<em>GOLD</em>®</div>
   <small>© 2026 NOIR GOLD · Visual Creativity, Social Aesthetics</small>
-  <div class="f-links"><a href="#works">Works</a><a href="#grid">Grid</a><a href="#contact">Contact</a></div>
+  <div class="f-links"><a href="#works">Works</a><a href="#grid">Cases</a><a href="#contact">Contact</a></div>
 </footer>
+
+<div id="lightbox" hidden role="dialog" aria-modal="true" aria-label="作品大圖">
+  <img alt="">
+  <button type="button" aria-label="關閉">×</button>
+</div>
 
 <!-- floating cursor thumbnail -->
 <div id="thumb"><img alt="project preview"><span class="story">IG story preview</span></div>
@@ -852,6 +935,50 @@ heroOnScroll();
     }
   }
   setTimeout(type, 600);
+})();
+
+/* ---------------- lightbox · GA events · mail form ---------------- */
+(function(){
+  const lb = document.getElementById('lightbox');
+  const lbImg = lb.querySelector('img');
+  const lbBtn = lb.querySelector('button');
+  let lastTrigger = null;
+  function closeLb(){
+    lb.hidden = true; lbImg.removeAttribute('src');
+    document.body.style.overflow = '';
+    if(lastTrigger) lastTrigger.focus();
+  }
+  document.querySelectorAll('a[data-zoom]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      e.preventDefault(); lastTrigger = a;
+      lbImg.src = a.href; lbImg.alt = a.dataset.alt || '';
+      lb.hidden = false; document.body.style.overflow = 'hidden';
+      lbBtn.focus();
+    });
+  });
+  lb.addEventListener('click', closeLb);
+  document.addEventListener('keydown', e=>{ if(e.key === 'Escape' && !lb.hidden) closeLb(); });
+
+  document.querySelectorAll('a[data-ga]').forEach(el=>{
+    el.addEventListener('click', ()=>{ if(window.gtag) gtag('event', el.dataset.ga, {link_url: el.href}); });
+  });
+  document.querySelectorAll('video[data-ga]').forEach(v=>{
+    v.addEventListener('play', ()=>{ if(window.gtag) gtag('event', v.dataset.ga); }, {once:true});
+  });
+
+  const addr = ['a712716705','gmail.com'].join('@');
+  const fb = document.getElementById('mailFallback');
+  if(fb){ const a = document.createElement('a'); a.href = 'mailto:' + addr; a.textContent = addr; fb.appendChild(a); }
+
+  document.getElementById('contactForm').addEventListener('submit', e=>{
+    e.preventDefault();
+    const val = id => document.getElementById(id).value.trim();
+    const name = val('nm'), mail = val('em'), type = val('tp'), msg = val('ms');
+    const subject = '[作品集來信] ' + (type || '合作洽詢') + '｜' + name;
+    const body = (msg || '（未填寫訊息）') + '\n\n— ' + name + '\n回覆信箱：' + mail;
+    if(window.gtag) gtag('event', 'contact_mailto_open', {method: 'mailto'});
+    location.href = 'mailto:' + addr + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  });
 })();
 </script>
 </body>
